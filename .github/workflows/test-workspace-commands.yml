@@ -114,6 +114,14 @@ jobs:
             command_line: rit list workspace
             contains: There is 1 workspace
             expected_result: PASSED
+        - name: RIT LIST WORKSPACE command (9)
+          uses: GuillaumeFalourd/test-cli-commands-action@v1
+          with:
+            command_line: rit list workspace
+            contains: There is 1 workspace
+            expected_result: PASSED
+        - name: print output
+          run: cat output.txt
 
   macos:
       runs-on: macos-latest
