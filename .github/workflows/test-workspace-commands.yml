@@ -90,39 +90,43 @@ jobs:
             command_line: rit list workspace
             contains: There are 2 workspaces
             expected_result: PASSED
-        - name: list workspaces
-          run: rit list workspace
-        - name: RIT LIST WORKSPACE command (X)
+        - name: RIT LIST WORKSPACE command (5)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit list workspace
             contains: Path not found
             expected_result: PASSED
-        - name: RIT UPDATE WORKSPACE command ERROR (5)
+        - name: RIT LIST WORKSPACE command (6)
+          uses: GuillaumeFalourd/test-cli-commands-action@v1
+          with:
+            command_line: rit list workspace
+            contains: Ok
+            expected_result: PASSED
+        - name: RIT UPDATE WORKSPACE command ERROR (7)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit update workspace --name="error"
             contains: no workspace found with this name
             expected_result: PASSED
-        - name: RIT UPDATE WORKSPACE command (6)
+        - name: RIT UPDATE WORKSPACE command (8)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit update workspace --name="Test"
             assert_file_path: testdata/gha_workflows/workspace_workflow/assert1.txt
             expected_result: PASSED
-        - name: RIT DELETE WORKSPACE command (7)
+        - name: RIT DELETE WORKSPACE command (9)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit delete workspace --name="Test"
             assert_file_path: testdata/gha_workflows/workspace_workflow/assert2.txt
             expected_result: PASSED
-        - name: RIT LIST WORKSPACE command (8)
+        - name: RIT LIST WORKSPACE command (10)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit list workspace
             contains: There is 1 workspace
             expected_result: PASSED
-        - name: RIT LIST WORKSPACE command (9)
+        - name: RIT LIST WORKSPACE command (11)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
             command_line: rit list workspace
