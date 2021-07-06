@@ -90,6 +90,12 @@ jobs:
             command_line: rit list workspace
             contains: There are 2 workspaces
             expected_result: PASSED
+        - name: RIT LIST WORKSPACE command (X)
+          uses: GuillaumeFalourd/test-cli-commands-action@v1
+          with:
+            command_line: rit list workspace
+            contains: Path not found
+            expected_result: PASSED
         - name: RIT UPDATE WORKSPACE command ERROR (5)
           uses: GuillaumeFalourd/test-cli-commands-action@v1
           with:
